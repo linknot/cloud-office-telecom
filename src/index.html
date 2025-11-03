@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Office - Telecom Argentina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-cloud"></i> Cloud Office</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#principal">Principal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#conocimiento">Conocimiento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cultura">Cultura</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#modelo">Modelo</a></li>
+                </ul>
+                <div class="navbar-nav">
+                    <button id="loginBtn" class="btn btn-outline-light">Iniciar Sesión</button>
+                    <button id="logoutBtn" class="btn btn-outline-light d-none">Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-white mb-4">
+                        🎉 ¡Bienvenid@ a nuestra sección Cloud! ☁️
+                    </h1>
+                    <p class="lead text-white mb-4">
+                        Pasá, curioseá, y descubrí contenido que seguro te va a interesar.
+                        ¿No encontrás lo que buscás? ¡No te quedes con las ganas, escribinos!
+                    </p>
+                    <a href="mailto:cloudoffice@teco.com.ar" class="btn btn-light btn-lg">
+                        <i class="fas fa-envelope"></i> cloudoffice@teco.com.ar
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="cloud-animation">
+                        <i class="fas fa-cloud fa-10x text-white opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Cloud Office -->
+    <section id="principal" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4">¿Qué es la Cloud Office?</h2>
+                    <p class="lead">
+                        Es una tribu que se encarga de velar por la administración, gobernabilidad y operación 
+                        de la infraestructura de las nubes públicas en la compañía. Además, acompañamos a 
+                        aquellos equipos que tienen la necesidad de migrar cargas de trabajo, aportándoles 
+                        las metodologías, modelos operativos, herramientas y mejores prácticas para que 
+                        puedan adquirir habilidades y lograr autonomía en su viaje a la nube.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Sections -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Principal -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-home text-primary"></i> Principal</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-video text-success"></i> Videos: ¿Quiénes somos?</li>
+                                <li><i class="fas fa-video text-success"></i> ¿Qué hacemos?</li>
+                                <li><i class="fas fa-video text-success"></i> Un paseo por la Nube</li>
+                                <li><i class="fas fa-cogs text-info"></i> Modelo operativo</li>
+                                <li><i class="fas fa-server text-warning"></i> Rent Account</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gestión del Conocimiento -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-lightbulb text-warning"></i> Gestión del Conocimiento</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-plus-circle text-success"></i> Ingreso Iniciativas Cloud Pública</li>
+                                <li><i class="fas fa-share-alt text-info"></i> Cloud Sharing Experience</li>
+                                <li><i class="fas fa-graduation-cap text-primary"></i> Aprendizaje y Certificaciones</li>
+                                <li><i class="fas fa-newspaper text-secondary"></i> Novedades AWS | GCP | Azure</li>
+                                <li><i class="fas fa-calendar text-danger"></i> Calendario de eventos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultura y Comunicación -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fas fa-users text-success"></i> Cultura y Comunicación</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-user-plus text-primary"></i> Onboarding Cloud Office</li>
+                                <li><i class="fas fa-comments text-info"></i> Foros y FAQs internos</li>
+                                <li><i class="fas fa-poll text-warning"></i> Encuestas y feedback</li>
+                                <li><i class="fas fa-chart-bar text-success"></i> Métricas de uso</li>
+                                <li><i class="fas fa-birthday-cake text-danger"></i> Espacio social</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Model -->
+    <section id="modelo" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestro Modelo Operativo</h2>
+            
+            <div class="mc-scope">
+                <!-- Framework Governance -->
+                <section class="mc-governance-section">
+                    <div class="mc-governance-header">
+                        <h2 class="mc-governance-title">
+                            <span class="mc-governance-icon-title">⚙️</span>
+                            Nuestro Framework
+                        </h2>
+                    </div>
+                    <div class="mc-governance-framework">
+                        <div class="mc-governance-chip">
+                            <span class="mc-governance-icon">🏛️</span>
+                            <span class="mc-governance-text">Architecture<br>Governance</span>
+                        </div>
+                        <div class="mc-governance-chip">
+                            <span class="mc-governance-icon">🔒</span>
+                            <span class="mc-governance-text">Security<br>Governance</span>
+                        </div>
+                        <div class="mc-governance-chip">
+                            <span class="mc-governance-icon">🏗️</span>
+                            <span class="mc-governance-text">Infrastructure<br>Governance</span>
+                        </div>
+                        <div class="mc-governance-chip">
+                            <span class="mc-governance-icon">⚙️</span>
+                            <span class="mc-governance-text">Operations<br>Governance</span>
+                        </div>
+                        <div class="mc-governance-chip">
+                            <span class="mc-governance-icon">💰</span>
+                            <span class="mc-governance-text">Financial<br>Governance</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Container -->
+                <div class="mc-main-container">
+                    <!-- Scrum Section -->
+                    <div class="mc-scrum-section">
+                        <div class="mc-scrum-hexagon">
+                            <div class="mc-scrum-title">Scrum of<br>Scrums</div>
+                            <div class="mc-scrum-po">PO: L. LAZARO</div>
+                        </div>
+                        <div class="mc-callout-bubble mc-scrum-callout">
+                            <div class="mc-callout-title">¿Qué hacemos?</div>
+                            <div class="mc-callout-content">
+                                • Vincula las células de la Tribu Cloud Office.<br>
+                                • Foco en lo Estratégico.<br>
+                                • Alineamiento en Capacity, Comunicación, Roadmap de Equipos, Aprendizajes, entre otros.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multicloud Container -->
+                    <div class="mc-multicloud-container">
+                        <div class="mc-multicloud-header">
+                            <div class="mc-pu-badge">Pu</div>
+                            <h2 class="mc-multicloud-title">Multicloud - Cloud Pública</h2>
+                        </div>
+
+                        <div class="mc-multicloud-content">
+                            <!-- Columna Callouts -->
+                            <div class="mc-callouts-column">
+                                <div class="mc-callout-bubble">
+                                    <div class="mc-callout-title">¿Qué hacemos?</div>
+                                    <div class="mc-callout-content">
+                                        La <strong>Cloud Business Office (CBO)</strong> alinea los productos y servicios ofrecidos por operadores con las necesidades de sus clientes empresariales y liderazgo.
+                                    </div>
+                                </div>
+
+                                <div class="mc-callout-bubble">
+                                    <div class="mc-callout-title">¿Qué hacemos?</div>
+                                    <div class="mc-callout-content">
+                                        MIGRAR y MODERNIZAR aplicaciones multitube que permita reducir los costos, aumentar su agilidad y crecer de forma más rápida, tomando el rol facilitador o de práctica.
+                                    </div>
+                                </div>
+
+                                <div class="mc-callout-bubble">
+                                    <div class="mc-callout-title">¿Qué hacemos?</div>
+                                    <div class="mc-callout-content">
+                                        <strong>Cloud Platform Engineering (CPE)</strong> integra las capacidades de <strong>Plataforma</strong>, <strong>Operaciones</strong> y <strong>Seguridad</strong> para garantizar una adopción de nube pública ágil, estandarizada y segura.<br><br>
+                                        Desde <strong>Plataforma</strong>, define estándares multi-nube, IaC y documentación oficial que facilitan despliegues consistentes.<br><br>
+                                        Con <strong>Operaciones</strong>, asegura la gestión eficiente de la nube, proveyendo imágenes base, primitivas y herramientas de monitoreo para garantizar continuidad.<br><br>
+                                        A través de <strong>Seguridad</strong>, protege y gobierna los entornos cloud mediante políticas, controles, respuesta a incidentes y automatización de procesos.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Columna Células -->
+                            <div class="mc-cells-column">
+                                <!-- CBO -->
+                                <div class="mc-cell-card mc-cbo-card">
+                                    <div class="mc-cell-title">Cloud Business Office</div>
+                                    <div class="mc-cell-po">PO: G. BARROS</div>
+                                </div>
+
+                                <!-- Applications -->
+                                <div class="mc-applications-section">
+                                    <h3 class="mc-section-title">APLICACIONES</h3>
+                                    <div class="mc-applications-grid">
+                                        <div class="mc-app-card mc-modernization">
+                                            <div class="mc-app-title">Modernización</div>
+                                            <div class="mc-app-po">PO: M. PAIT</div>
+                                        </div>
+                                        <div class="mc-app-card mc-projects">
+                                            <div class="mc-app-title">Proyectos</div>
+                                            <div class="mc-app-po">PO: M. PAIT</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CPE -->
+                                <div class="mc-cpe-section">
+                                    <h3 class="mc-section-title">CLOUD PLATFORM ENGINEERING</h3>
+                                    <div class="mc-cpe-grid">
+                                        <div class="mc-cpe-card mc-platform">
+                                            <div class="mc-cpe-title">Plataforma</div>
+                                            <div class="mc-cpe-po">PO: E. GAZZANEO</div>
+                                            <div class="mc-cpe-sm">SM: S. BENITEZ</div>
+                                        </div>
+                                        <div class="mc-cpe-card mc-operations">
+                                            <div class="mc-cpe-title">Operaciones</div>
+                                            <div class="mc-cpe-po">PO: E. GAZZANEO</div>
+                                            <div class="mc-cpe-sm">SM: S. BENITEZ</div>
+                                        </div>
+                                        <div class="mc-cpe-card mc-security">
+                                            <div class="mc-cpe-title">Seguridad</div>
+                                            <div class="mc-cpe-po">PO: G. BATTISTA</div>
+                                            <div class="mc-cpe-sm">SM: S. BENITEZ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clientes -->
+                <section class="mc-clients-section">
+                    <h2 class="mc-section-header">Nuestros Business Partners</h2>
+                    <div class="mc-clients-grid">
+                        <div class="mc-client-item">
+                            <span class="mc-client-icon">📱</span>
+                            <span class="mc-client-label">Canales Digitales</span>
+                        </div>
+                        <div class="mc-client-item">
+                            <span class="mc-client-icon">👥</span>
+                            <span class="mc-client-label">Recursos Humanos</span>
+                        </div>
+                        <div class="mc-client-item">
+                            <span class="mc-client-icon">💰</span>
+                            <span class="mc-client-label">Finanzas</span>
+                        </div>
+                        <div class="mc-client-item">
+                            <span class="mc-client-icon">📊</span>
+                            <span class="mc-client-label">Business Intelligence</span>
+                        </div>
+                        <div class="mc-client-item">
+                            <span class="mc-client-icon">🏢</span>
+                            <span class="mc-client-label">Corporativo</span>
+                        </div>
+                        <div class="mc-client-item">
+                            <span class="mc-client-icon">🔧</span>
+                            <span class="mc-client-label">Operaciones</span>
+                        </div>
+                        <div class="mc-client-item">
+                            <span class="mc-client-icon">📈</span>
+                            <span class="mc-client-label">Marketing</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSX Section -->
+    <section id="conocimiento" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-bold mb-4">Cloud Sharing Experience (CSX)</h2>
+                    <p class="lead">
+                        ☁ CSX es el lugar perfecto para los entusiastas de la cloud para conectarnos, 
+                        crezcamos juntos y compartamos! ⚡Aquí, la energía y la colaboración son imparables. 
+                        Es un espacio donde 🤓el conocimiento fluye, las experiencias se intercambian, 
+                        y las mejores prácticas se convierten en acción. Juntos, impulsamos la adopción 
+                        de tecnologías en la nube, resolvemos desafíos y encontramos soluciones innovadoras 
+                        que nos llevan al siguiente nivel. 🆒
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-rocket fa-8x opacity-75"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="cultura" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">🚀 ¡Novedades de la Nube! ☁</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body text-center">
+                            <i class="fab fa-aws fa-3x text-warning mb-3"></i>
+                            <h5>AWS News</h5>
+                            <a href="https://aws.amazon.com/es/new/" target="_blank" class="btn btn-warning">
+                                Ver Novedades
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body text-center">
+                            <i class="fab fa-google fa-3x text-primary mb-3"></i>
+                            <h5>Google Cloud</h5>
+                            <a href="https://cloud.google.com/blog/" target="_blank" class="btn btn-primary">
+                                Ver Blog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-info">
+                        <div class="card-body text-center">
+                            <i class="fab fa-microsoft fa-3x text-info mb-3"></i>
+                            <h5>Azure</h5>
+                            <a href="https://azure.microsoft.com/en-us/blog/" target="_blank" class="btn btn-info">
+                                Ver Blog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5>Cloud Office - Telecom Argentina</h5>
+                    <p>Somos Evolución</p>
+                </div>
+                <div class="col-lg-6 text-end">
+                    <p>🚀 ¡Todo listo para despegar a la nube!</p>
+                    <p>Acá vas a encontrar la información y los canales que necesitás para subir tu proyecto sin turbulencias.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" onclick="signIn()">Iniciar Sesión</button>
+                    </div>
+                    <div id="signupForm" class="d-none">
+                        <div class="mb-3">
+                            <label for="newUsername" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="newUsername" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="signUp()">Registrarse</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" onclick="toggleForm()">
+                        <span id="toggleText">¿No tienes cuenta? Regístrate</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
+    <script src="https://unpkg.com/amazon-cognito-identity-js@6.3.12/dist/amazon-cognito-identity.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
