@@ -1,25 +1,15 @@
-# ================================================================================================
-# ＤＥＶＥＬＯＰ ＥＮＶＩＲＯＮＭＥＮＴ ＣＯＮＦＩＧＵＲＡＴＩＯＮ
-# ================================================================================================
-
 project_name = "cloud-office-dev"
 bucket_name  = "dev-cloud-office-telecom-website-2024"
 
-# Configuración de S3
 versioning_enabled = true
+ipv6_enabled       = false
+cloudfront_comment = "DEV - CloudFront distribution for Cloud Office website"
+price_class        = "PriceClass_100"
 
-# Configuración de CloudFront
-ipv6_enabled         = false
-cloudfront_comment   = "DEV - CloudFront distribution for Cloud Office website"
-default_root_object  = "index.html"
-price_class         = "PriceClass_100"  # Solo US, Canada, Europa
-
-# Configuración de cache (desarrollo - cache corto)
 min_ttl     = 0
-default_ttl = 300    # 5 minutos
-max_ttl     = 3600   # 1 hora
+default_ttl = 300
+max_ttl     = 3600
 
-# Configuración de Cognito
 password_policy = {
   minimum_length    = 8
   require_lowercase = true
@@ -29,12 +19,11 @@ password_policy = {
 }
 
 token_validity = {
-  access_token  = 1    # 1 hora
-  id_token      = 1    # 1 hora
-  refresh_token = 7    # 7 días
+  access_token  = 1
+  id_token      = 1
+  refresh_token = 7
 }
 
-# Usuario administrador
 create_admin_user = true
 admin_user = {
   username = "admin@cloudoffice-dev.com"
@@ -42,7 +31,6 @@ admin_user = {
   password = "DevCloudOffice2025!"
 }
 
-# Tags obligatorios
 tags = {
   finops_cost_center  = "CFT00006"
   info_app            = "cloud-office"
@@ -51,7 +39,7 @@ tags = {
   sec_confidentiality = "mid"
   finops_business     = "CIO"
   technical_team      = "GPodestaQuiroga@teco.com.ar"
-  environment         = "develop"
+  environment         = "dev"
   info_name           = "cloud-office-website"
   info_cluster        = "cloud-office"
   name                = "cloud-office-dev"

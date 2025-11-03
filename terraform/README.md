@@ -1,6 +1,6 @@
 # 🏗️ Terraform Infrastructure - Cloud Office
 
-Infraestructura como código para el sitio web Cloud Office de Telecom Argentina usando Terraform.
+Infraestructura como código para el sitio web Cloud Office de Telecom Argentina.
 
 ## 📋 Arquitectura
 
@@ -28,28 +28,6 @@ Infraestructura como código para el sitio web Cloud Office de Telecom Argentina
 | **Cognito User Pool Client** | Cliente de aplicación | Flujos de auth configurados |
 | **Cognito User** | Usuario administrador | Credenciales por defecto |
 
-## 🚀 Uso Rápido
-
-### Prerrequisitos
-- Terraform >= 1.0
-- AWS CLI configurado
-- Credenciales AWS válidas
-
-### Deployment
-
-```bash
-# 1. Ir al directorio terraform
-cd terraform/
-
-# 2. Desplegar en desarrollo
-./deploy.sh develop plan
-./deploy.sh develop apply
-
-# 3. Desplegar en producción
-./deploy.sh master plan
-./deploy.sh master apply
-```
-
 ## 📁 Estructura
 
 ```
@@ -58,70 +36,72 @@ terraform/
 ├── variables.tf                # Variables de entrada
 ├── outputs.tf                  # Outputs del módulo
 ├── provider.tf                 # Configuración de providers
-├── deploy.sh                   # Script de deployment
 ├── README.md                   # Esta documentación
-└── environments/               # Configuraciones por ambiente
-    ├── develop/
-    │   └── terraform.tfvars    # Variables de desarrollo
-    ├── testing/
-    │   └── terraform.tfvars    # Variables de testing
-    └── master/
-        └── terraform.tfvars    # Variables de producción
+├── .gitignore                  # Archivos a ignorar
+└── Variables/                  # Variables por ambiente
+    ├── develop.tfvars          # Variables de desarrollo
+    ├── testing.tfvars          # Variables de testing
+    └── master.tfvars           # Variables de producción
+```
+
+## 🚀 Deployment via GitLab CI/CD
+
+El deployment se realiza automáticamente a través de GitLab CI/CD siguiendo el estándar de Telecom:
+
+### Pipeline Stages
+1. **Validate** - Validación de sintaxis Terraform
+2. **Plan** - Generación del plan de ejecución
+3. **Apply** - Aplicación de cambios (manual approval)
+
+### Comandos GitLab
+```yaml
+# .gitlab-ci.yml (ejemplo)
+terraform_plan:
+  script:
+    - terraform init
+    - terraform plan -var-file="Variables/${CI_COMMIT_REF_NAME}.tfvars"
+
+terraform_apply:
+  script:
+    - terraform apply -var-file="Variables/${CI_COMMIT_REF_NAME}.tfvars" -auto-approve
+  when: manual
 ```
 
 ## 🌍 Ambientes
 
-### Development
+### Development (develop branch)
 - **Bucket:** `dev-cloud-office-telecom-website-2024`
 - **Cache TTL:** Corto (5 min - 1 hora)
 - **Price Class:** PriceClass_100 (US, Canada, Europa)
-- **Cognito:** Políticas relajadas para desarrollo
+- **Variables:** `Variables/develop.tfvars`
 
-### Testing
+### Testing (testing branch)
 - **Bucket:** `test-cloud-office-telecom-website-2024`
 - **Cache TTL:** Medio (30 min - 2 horas)
 - **Price Class:** PriceClass_100
-- **Cognito:** Políticas intermedias
+- **Variables:** `Variables/testing.tfvars`
 
-### Production (Master)
+### Production (master branch)
 - **Bucket:** `cloud-office-telecom-website-2024`
 - **Cache TTL:** Optimizado (1 hora - 24 horas)
 - **Price Class:** PriceClass_All (distribución global)
-- **Cognito:** Políticas de seguridad altas
+- **Variables:** `Variables/master.tfvars`
 
-## 🔧 Comandos Terraform
+## 🔧 Comandos Terraform Locales
 
-### Comandos Básicos
+### Para desarrollo local únicamente
 ```bash
 # Inicializar
 terraform init
 
 # Planificar cambios
-terraform plan -var-file="environments/develop/terraform.tfvars"
+terraform plan -var-file="Variables/develop.tfvars"
 
-# Aplicar cambios
-terraform apply -var-file="environments/develop/terraform.tfvars"
+# Aplicar cambios (solo para testing local)
+terraform apply -var-file="Variables/develop.tfvars"
 
 # Ver outputs
 terraform output
-
-# Destruir recursos
-terraform destroy -var-file="environments/develop/terraform.tfvars"
-```
-
-### Gestión de Workspaces
-```bash
-# Listar workspaces
-terraform workspace list
-
-# Crear workspace
-terraform workspace new develop
-
-# Cambiar workspace
-terraform workspace select develop
-
-# Ver workspace actual
-terraform workspace show
 ```
 
 ## 📊 Variables Principales
@@ -171,43 +151,10 @@ terraform workspace show
 | **Testing** | $2-8 USD |
 | **Production** | $5-15 USD |
 
-### Desglose por Servicio
-- **S3:** ~$0.023/GB + $0.0004/1K requests
-- **CloudFront:** ~$0.085/GB + $0.0075/10K requests
-- **Cognito:** Gratis hasta 50K MAU
-
-## 🚨 Troubleshooting
-
-### Errores Comunes
-
-#### Error: Bucket ya existe
-```bash
-# Importar bucket existente
-terraform import aws_s3_bucket.website_bucket nombre-del-bucket
-```
-
-#### Error: Workspace no existe
-```bash
-# Crear workspace
-terraform workspace new develop
-```
-
-#### Error: Tags faltantes
-Verificar que todos los tags obligatorios están en `terraform.tfvars`:
-- `finops_cost_center`
-- `info_app`
-- `financial_team`
-- `finops_budget_cod`
-- `sec_confidentiality`
-- `finops_business`
-- `technical_team`
-- `environment`
-- `info_name`
-
 ## 📞 Soporte
 
 - **Documentación:** Ver `/docs` en el repositorio
-- **Issues:** Crear issue en GitHub
+- **Issues:** GitLab Issues
 - **Contacto:** cloudoffice@teco.com.ar
 
 ---

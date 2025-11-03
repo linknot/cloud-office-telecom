@@ -1,25 +1,15 @@
-# ================================================================================================
-# ＴＥＳＴＩＮＧ ＥＮＶＩＲＯＮＭＥＮＴ ＣＯＮＦＩＧＵＲＡＴＩＯＮ
-# ================================================================================================
-
 project_name = "cloud-office-test"
 bucket_name  = "test-cloud-office-telecom-website-2024"
 
-# Configuración de S3
 versioning_enabled = true
+ipv6_enabled       = false
+cloudfront_comment = "TEST - CloudFront distribution for Cloud Office website"
+price_class        = "PriceClass_100"
 
-# Configuración de CloudFront
-ipv6_enabled         = false
-cloudfront_comment   = "TEST - CloudFront distribution for Cloud Office website"
-default_root_object  = "index.html"
-price_class         = "PriceClass_100"  # Solo US, Canada, Europa
-
-# Configuración de cache (testing - cache medio)
 min_ttl     = 0
-default_ttl = 1800   # 30 minutos
-max_ttl     = 7200   # 2 horas
+default_ttl = 1800
+max_ttl     = 7200
 
-# Configuración de Cognito
 password_policy = {
   minimum_length    = 10
   require_lowercase = true
@@ -29,12 +19,11 @@ password_policy = {
 }
 
 token_validity = {
-  access_token  = 8    # 8 horas
-  id_token      = 8    # 8 horas
-  refresh_token = 14   # 14 días
+  access_token  = 8
+  id_token      = 8
+  refresh_token = 14
 }
 
-# Usuario administrador
 create_admin_user = true
 admin_user = {
   username = "admin@cloudoffice-test.com"
@@ -42,7 +31,6 @@ admin_user = {
   password = "TestCloudOffice2025!"
 }
 
-# Tags obligatorios
 tags = {
   finops_cost_center  = "CFT00006"
   info_app            = "cloud-office"

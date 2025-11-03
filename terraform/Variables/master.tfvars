@@ -1,25 +1,15 @@
-# ================================================================================================
-# ＭＡＳＴＥＲ (ＰＲＯＤＵＣＴＩＯＮ) ＥＮＶＩＲＯＮＭＥＮＴ ＣＯＮＦＩＧＵＲＡＴＩＯＮ
-# ================================================================================================
-
 project_name = "cloud-office"
 bucket_name  = "cloud-office-telecom-website-2024"
 
-# Configuración de S3
 versioning_enabled = true
+ipv6_enabled       = false
+cloudfront_comment = "PROD - CloudFront distribution for Cloud Office Telecom Argentina"
+price_class        = "PriceClass_All"
 
-# Configuración de CloudFront
-ipv6_enabled         = false
-cloudfront_comment   = "PROD - CloudFront distribution for Cloud Office Telecom Argentina"
-default_root_object  = "index.html"
-price_class         = "PriceClass_All"  # Distribución global completa
-
-# Configuración de cache (producción - cache optimizado)
 min_ttl     = 0
-default_ttl = 3600   # 1 hora
-max_ttl     = 86400  # 24 horas
+default_ttl = 3600
+max_ttl     = 86400
 
-# Configuración de Cognito (producción - seguridad alta)
 password_policy = {
   minimum_length    = 12
   require_lowercase = true
@@ -29,12 +19,11 @@ password_policy = {
 }
 
 token_validity = {
-  access_token  = 24   # 24 horas
-  id_token      = 24   # 24 horas
-  refresh_token = 30   # 30 días
+  access_token  = 24
+  id_token      = 24
+  refresh_token = 30
 }
 
-# Usuario administrador
 create_admin_user = true
 admin_user = {
   username = "admin@cloudoffice.com"
@@ -42,7 +31,6 @@ admin_user = {
   password = "CloudOffice2025!Secure#"
 }
 
-# Tags obligatorios
 tags = {
   finops_cost_center  = "CFT00006"
   info_app            = "cloud-office"
